@@ -1,2 +1,5 @@
-# grand-scheme-of-things
-legacy website for grand scheme of things, ported to github
+# GRAND SCHEME OF THINGS
+
+TEMPORARY PAGE, MORE TO COME SOON!
+
+- 10/11/21
