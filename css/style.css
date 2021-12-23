@@ -1378,28 +1378,25 @@ img.big {
     opacity: 1;
     transition: 0.2s;
 }
-.card .icon {
-    background-image: url(/wall/gsot.png);
-}
 .card:hover > div, .card:focus > .div {
     background-color: #00000000;
 }
 
 /* Themed cards */
 .card.dr_nolife {
-    --c: #f533021a;
+    --c: #f502022c;
 }
 .card.equton {
-    --c: #5000FD1a;
+    --c: #a000fd2c;
 }
 .card.fireblaster5629 {
-    --c: #dfdfdf1a;
+    --c: #ff5e002c;
 }
 .card.plexion {
-    --c: #003BFF1a;
+    --c: #0059ff2c;
 }
 .card.troned {
-    --c: #00ff2a1a;
+    --c: #00ff2a2c;
 }
 
 /* Card head icon */
