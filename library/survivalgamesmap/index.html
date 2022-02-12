@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title translate="no">Survival Games Map for 1.18 | GSOT</title>
+    <meta name="title" content="Minecraft's Survival Games Map for 1.18">
+    <meta name="description" content="Play in a custom-built survival games map, powered by the bundled survival games datapack.">
+    <meta name="keywords" content="plexion, plexion.dev, mc, minecraft, events, datapacks, datapack, void rising, lava rising, minecraft but, equton, troned, drnolife, zriv, plexion minecraft, plexion gaming, dev, development, osu!, cs:go, counter strike global offensive, resourcepacks, maps">
+    <meta property="og:site_name" content="plexion">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://gsot.plexion.dev/library/survivalgamesmap">
+    <meta property="og:title" content="Minecraft's Survival Games Map for 1.18">
+    <meta property="og:description" content="Play in a custom-built survival games map, powered by the bundled survival games datapack.">
+    <meta property="og:image" content="https://gsot.plexion.dev/library/survivalgamesmap/cover-big.png">
+    <meta name="theme-color" content="#003BFF">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="https://plexion.dev/site.webmanifest">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/favicon.ico"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <!-- js scripts -->
+    <script src="/js/scroll.js"></script>
+    <script src="info.js"></script>
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20a071237e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="dark" style="--accent-page: var(--home);">
+    <header class="dark">
+        <a class="brand" href="/">
+            <img src="/img/gsot.png">
+        </a>
+        <span class="links">
+            <a href="/" aria-label="Home"><i class="icon w-20" stroke-width="2.5" data-feather="home"></i><i class="text">Home<span class="bar"></span></i></a>
+            <a href="/about" aria-label="About"><i class="icon w-20" stroke-width="2.5" data-feather="info"></i><i class="text">about<span class="bar"></span></i></a>
+            <a href="/library" class="focus" aria-label="Library"><i class="icon w-20" stroke-width="2.5" data-feather="book"></i><i class="text">Library<span class="bar"></span></i></a>
+            <a href="/contact" aria-label="Contact"><i class="icon w-20" stroke-width="2.5" data-feather="mail"></i><i class="text">contact<span class="bar"></span></i></a>
+        </span>
+        <span class="menu">
+            <span class="dropdown-wrap">
+                <a href="/accessibility" aria-label="Options" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
+            </span>
+        </span>
+    </header>
+    <div class="bg" style="background-image: url(cover-big.png);">
+        <section class="min header padding"><div class="bg-dark lib-grad"></div></section>
+    </div>
+    <section class="left header no-sep no-align" id="overview">
+        <label class="over tag archived-tag">THIS PROJECT IS ARCHIVED AND WILL NOT RECEIVE FUTURE UPDATES</label>
+        <h2 translate="no">Survival Games Map <label class="over tag beta-tag" translate="yes">BETA</label></h2>
+        <div class="creator">
+            <p class="text-16">by</p>
+            <a href="/" target="_blank">
+                <img src="/img/gsot.png">
+                <h5 class="text-16">GSOT</h5>
+            </a>
+            <h5 class="text-16">+</h5>
+            <span class="others">
+                <a href="https://youtube.com/channel/UCcdf6046yijxg0AFSlU_IRw" target="_blank" data-tooltip="Ozip">
+                    <img src="https://crafatar.com/avatars/9830e49f-c0af-4f87-a8d2-7626d77ab93b?overlay">
+                    <h5 class="text-16">Ozip</h5>
+                </a>
+                <a href="https://youtube.com/channel/UCfBltMEeb5UprQg3hg7ejsA" target="_blank" data-tooltip="longofire236">
+                    <img src="https://crafatar.com/avatars/f56c52fe-6c1b-4e62-ae6b-b51a1b48a15d?overlay">
+                    <h5 class="text-16">longofire236</h5>
+                </a>
+            </span>
+        </div>
+        <p class="text-18">Play in a custom-built survival games map, powered by the bundled survival games datapack. Featuring supply drops, custom loot tables, a custom-built border and much more. Play today for a bewildering, never-before-seen excitement-filled adventure that will brighten your entire week.</p>
+        <a role="button" class="button focus left icon outline dow" href="https://github.com/plex1on/survival-games-map/releases/latest/download/GSOT-SG.zip">Download</a>
+        <a role="button" class="button icon con" href="#installation">Installing</a>
+        <div class="info-blocks">
+            <div class="dl-wrap">
+                <!--<span class="desc">
+                    <p class="col-alt">Downloads</p>
+                    <p id="release-downloads">0</p>
+                </span>-->
+                <dl>
+                    <dt>Supports</dt>
+                    <dd>1.18</dd>
+                </dl>
+                <dl>
+                    <dt>Updated</dt>
+                    <dd id="updated"></dd>
+                </dl>
+                <dl>
+                    <dt>Released</dt>
+                    <dd>17/12/2021</dd>
+                </dl>
+            </div>
+            <div class="dl-wrap">
+                <dl>
+                    <dt>Tags</dt>
+                    <dd id="tags"></dd>
+                </dl>
+                <dl>
+                    <dt>Links</dt>
+                    <dd><a href="https://github.com/plex1on/survival-games-map" target="_blank">Github</a></dd>
+                </dl>
+                <dl>
+                    <dt></dt>
+                    <dd><a href="mailto:grandschemeofthingsyt@gmail.com" target="_blank">Send Issues</a></dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+    <section class="left header sep no-align" id="whats-new">
+        <h4>What's New</h4>
+        <div class="update">
+            <div class="header">
+                <h5 id="release-name"></h5><span class="text-16" id="release-date"></span>
+            </div>
+            <div class="details">
+                <p class="text-16" id="release-description"></p>
+            </div>
+        </div>
+    </section>
+    <section class="left header sep no-align" id="gallery">
+        <h4>Gallery</h4>
+        <div class="gallery">
+            <span class="img">
+                <img src="gal0.png">
+            </span>
+            <span class="img">
+                <img src="gal1.png">
+            </span>
+            <span class="img">
+                <img src="gal2.png">
+            </span>
+            <span class="img">
+                <img src="gal3.png">
+            </span>
+            <span class="img">
+                <img src="gal4.png">
+            </span>
+            <span class="img">
+                <img src="gal5.png">
+            </span>
+            <span class="img">
+                <img src="gal6.png">
+            </span>
+            <span class="img">
+                <img src="gal7.png">
+            </span>
+            <span class="img">
+                <img src="gal8.png">
+            </span>
+            <span class="img">
+                <img src="gal9.png">
+            </span>
+            <span class="img">
+                <img src="gal10.png">
+            </span>
+            <span class="img">
+                <img src="gal11.png">
+            </span>
+            <span class="img">
+                <img src="gal12.png">
+            </span>
+            <span class="img">
+                <img src="gal13.png">
+            </span>
+            <span class="img">
+                <img src="gal14.png">
+            </span>
+            <span class="img">
+                <img src="gal15.png">
+            </span>
+            <span class="img">
+                <img src="gal16.png">
+            </span>
+            <span class="img">
+                <img src="gal17.png">
+            </span>
+            <span class="img">
+                <img src="gal18.png">
+            </span>
+            <span class="img">
+                <img src="gal19.png">
+            </span>
+            <span class="img">
+                <img src="gal25.png">
+            </span>
+            <span class="img">
+                <img src="gal26.png">
+            </span>
+            <span class="img">
+                <img src="gal27.png">
+            </span>
+            <span class="img">
+                <img src="gal28.png">
+            </span>
+            <span class="img">
+                <img src="gal29.png">
+            </span>
+            <span class="img">
+                <img src="gal30.png">
+            </span>
+            <span class="img">
+                <img src="gal31.png">
+            </span>
+            <span class="img">
+                <img src="gal32.png">
+            </span>
+            <span class="img">
+                <img src="gal33.png">
+            </span>
+            <span class="img">
+                <img src="gal34.png">
+            </span>
+            <span class="img">
+                <img src="gal20.png">
+            </span>
+            <span class="img">
+                <img src="gal21.png">
+            </span>
+            <span class="img">
+                <img src="gal22.png">
+            </span>
+            <span class="img">
+                <img src="gal23.png">
+            </span>
+            <span class="img">
+                <img src="gal24.png">
+            </span>
+
+            <!-- NEXT/PREV -->
+            <a role="button" class="arrow prev" onclick="plusSlides(-1)"><i class="icon w-24" data-feather="arrow-left"></i></a>
+            <a role="button" class="arrow next" onclick="plusSlides(1)"><i class="icon w-24" data-feather="arrow-right"></i></a>
+        </div>
+        <div class="gallery-legacy">
+            <a role="button" class="gallery-switch" onclick="legacyGallery()">Swap to</a>
+        </div>
+        <div class="dot"></div>
+    </section>
+    <script src="/js/gallery.js"></script>
+    <section class="left header sep no-align" id="featuring">
+        <h4>Featuring</h4>
+        <div class="supports">
+            <span class="desc">
+                <span class="icon">
+                    <div class="headline-icon min">
+                        <i class="icon w-24" data-feather="package"></i>
+                    </div>
+                </span>
+                <span class="text">
+                    <h5>Datapack included</h5>
+                    <p>The map comes pre-bundled with the Survival Games datapack.</p>
+                </span>
+            </span>
+        </div>
+    </section>
+    <section class="left header sep no-align" id="installation">
+        <a href="/library/setup"><h4>Installation & Setup</h4></a>
+        <p class="text-16">As with any other map, there is an incredibly simple installation process:</p>
+        <ol>
+            <li>Download the map .zip file and save it somewhere</li>
+            <li>On Windows, press <code>WIN + R</code> and enter <code>%appdata%</code></li>
+            <li>In the window that pops up, navigate to <code>.minecraft</code>, <code>saves</code></li>
+            <li>Drag the downloaded .zip file into this folder</li>
+        </ol>
+        <p class="text-16">When you have everyone ready, simply:</p>
+        <ol>
+            <li>Run <code>/function survivalgames:reset</code> to get everyone in their spawn pods</li>
+            <li>Once you're ready, run <code>/function survivalgames:start</code> and let the games begin!</li>
+        </ol>
+        <br>
+        <p class="text-16">Now you have the world file, there are multiple ways you can set this up:</p>
+        <h5>Host with a server</h5>
+        <ol>
+            <li>Download the latest <code>server.jar</code> over at <a href="https://minecraft.net">minecraft.net</a> and launch it</li>
+            <li>When the program closes, in the same directory open <code>eula.txt</code></li>
+            <li>Replace the <code>false</code> with <code>true</code> to accept the <a href="https://minecraft.net/en-us/eula/">EULA</a></li>
+            <li>Extract the .zip file and place the contents of it into a new folder called <code>world</code></li>
+            <li>Set-up <code>25565</code> port-forwarding on your router, more info @ <a href="https://portforward.com/softwareguides/minecraft/portforward-minecraft.htm">portforward.com</a></li>
+            <li>Once finished, launch up your server and share your IP that they can use to connect with!</li>
+        </ol>
+        <br>
+        <h5>Host with Realms</h5>
+        <p class="text-14">This requires an active subscription to Minecraft Realms on Java Edition</p>
+        <ol>
+            <li>Navigate to <code>Minecraft Realms</code> from the main menu and press the <code><i translate="no" class="material-icons">build</i></code> button</li>
+            <li>Choose one of the three presented world slots and select <code>Reset world</code> then <code>Upload world</code></li>
+            <li>Select the Haunting Hunters save from this menu and wait for it to be uploaded</li>
+            <li>Once finished, invite your friends to the realm and have some fun!</li>
+        </ol>
+    </section>
+    <footer class="dark">
+        <div class="flex">
+            <span class="brand">
+                <div class="main">
+                    <h2>GSOT</h2>
+                    <p>Founded in April 2020, website by <a href="https://plexion.dev" target="_blank">plexion</a></p>
+                    <br>
+                    <label class="over">ACCESSIBILITY</label>
+                    <br>
+                    <br>
+                    <a role="button" onclick="toggleDyslexicFont()" href="javascript:void(0);" class="button left opendyslexic-toggle">OpenDyslexic Font</a>
+                    <a role="button" onclick="toggleHyperlegibleFont()" href="javascript:void(0);" class="button left hyperlegible-toggle">Hyperlegible Font</a>
+                </div>
+            </span>
+            <span class="links">
+                <span class="link">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/library">Library</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </span>
+                <span class="link">
+                    <h4>Help/Developing</h4>
+                    <ul>
+                        <li><a href="/accessibility">Accessibility</a></li>
+                        <li><a href="https://github.com/plexiondev/grand-scheme-of-things">Github</a></li>
+                        <li><a href="https://plexion.dev/gnu">License</a></li>
+                    </ul>
+                </span>
+            </span>
+        </div>
+        <div class="padding">
+            <div class="socials">
+                <a class="social-icon" target="_blank" href="https://youtube.com/channel/UCCWMZiBGudbFxJ1UxnShVNw" data-tooltip="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="social-icon" target="_blank" href="https://planetminecraft.com/member/gsot" data-tooltip="PMC">
+                    <i class="fas fa-ellipsis-h"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Beta scripts -->
+<script src="/experiments/helvetica.js"></script>
+<script src="/experiments/plexionblue.js"></script>
+<script src="/experiments/torus.js"></script>
+<script src="/experiments/light.js"></script>
+<script src="/experiments/accents.js"></script>
+<script src="/experiments/minimalcards.js"></script>
+<script src="/experiments/exo2.js"></script>
+<!-- Final script importing (after page rendered) -->
+<script src="/js/settings/dyslexic.js"></script>
+<script src="/js/settings/hyperlegible.js"></script>
+<script src="/js/settings/reduced-motion.js"></script>
+<script src="/js/settings/reduced-saturation.js"></script>
+<script src="/js/settings/background-videos.js"></script>
+<script src="/js/settings/high-contrast.js"></script>
+<script src="/js/settings/legacy-gallery.js"></script>
+<script src="/js/theme.js"></script>
+<script>
+    feather.replace()
+</script>

@@ -1,0 +1,37 @@
+/* user cards */
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    transition: 0.2s;
+    padding: 20px 40px;
+}
+/* user card */
+.user-card {
+    background-color: var(--raise-bg);
+    box-shadow: var(--raise-0);
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.user-card:hover, .user-card:focus {
+    background-color: var(--raise-hover);
+}
+
+/* card head icon */
+.user-card .icon {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 20px 0;
+}
+.user-card .icon img {
+    background-color: var(--b5);
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Card info */
+.user-card .info {
+    text-align: center;
+    padding-bottom: 100px;
+}

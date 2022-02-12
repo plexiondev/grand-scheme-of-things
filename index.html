@@ -30,6 +30,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <!-- Load JS -->
+    <script src="/js/github.js"></script>
     <script src="/js/scroll.js"></script>
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
@@ -39,73 +40,255 @@
 <body class="dark" style="--accent-page: var(--home);">
     <header class="dark">
         <a class="brand" href="/">
-            <img src="img/brand.png">
+            <img src="/img/gsot.png">
         </a>
         <span class="links">
             <a href="/" class="focus" aria-label="Home"><i class="icon w-20" stroke-width="2.5" data-feather="home"></i><i class="text">Home<span class="bar"></span></i></a>
             <a href="/about" aria-label="About"><i class="icon w-20" stroke-width="2.5" data-feather="info"></i><i class="text">about<span class="bar"></span></i></a>
+            <a href="/library" aria-label="Library"><i class="icon w-20" stroke-width="2.5" data-feather="book"></i><i class="text">Library<span class="bar"></span></i></a>
             <a href="/contact" aria-label="Contact"><i class="icon w-20" stroke-width="2.5" data-feather="mail"></i><i class="text">contact<span class="bar"></span></i></a>
         </span>
         <span class="menu">
             <span class="dropdown-wrap">
-                <a href="/accessibility" aria-label="Options" class="option-open"><i class="material-icons" translate="no">accessibility_new</i></a>
+                <a href="/accessibility" aria-label="Options" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
             </span>
         </span>
     </header>
-    <div class="header-gap"></div>
-    <section class="center header bg" style="background-image: url(wall/banner.png);" style="z-index: 2;">
+    <section class="center header bg padding" style="background-image: url(wall/banner.png);" style="z-index: 2;">
         <span class="text limited bigger no-flex can-full">
-            <h3 class="top-line">WE ARE</h3>
-            <h1 class="text-56">Grand Scheme of Things</h1>
-            <p class="text-20">A team creating minecraft maps, games and the like.</p>
+            <h1 class="text-72">GRAND SCHEME<br>OF THINGS</h1>
+            <h3 class="col-alt">A team creating minecraft maps, games and the like.</h3>
             <br>
-            <a role="button" href="/about" aria-label="Meet the team behind GSOT" class="button big focus">MEET THE TEAM</a>
+            <a role="button" href="/library" aria-label="Explore all projects by GSOT" class="button big focus icon con">Explore</a>
+            <a role="button" href="/about" aria-label="Meet the team behind GSOT" class="button big">About GSOT</a>
         </span>
         <div class="bg-back bg-side-grad"></div>
     </section>
-    <section class="full newsandreleases">
+    <section class="center med" style="padding-top: 40px; background-color: var(--d6); padding-bottom: 0;">
+        <h3>What's happening?</h3>
+    </section>
+    <section class="center full" style="background-color: var(--d6);">
         <div class="dual">
             <span class="news">
-                <h3>THE LATEST NEWS</h3>
-                <div id="news"></div>
+                <h3>Recent changes</h3>
+                <div id="changes"></div>
             </span>
             <span class="content">
-                <h3>NEW RELEASES</h3>
-                <div id="releases">
-                    <h2>NEW GAME COMING SOON!</h2>
-                    <p>Stay tuned.</p>
-                </div>
+                <h3>Current project</h3>
+                <div id="project"></div>
             </span>
         </div>
     </section>
-    <section class="left full bg med" style="background-image: url(wall/hauntedhunters.png);">
-        <h4 class="top-line" style="bottom: 10px;">CHECK OUT</h4>
-        <h1 class="text-42">Haunted Hunters</h1>
-        <p class="text-20">Our take on classic Minecraft Hide&Seek, with new powerups purchasable and set in a haunted mansion.</p>
-        <a role="button" class="button focus left big" href="https://plexion.dev/library/hauntinghunters">PLAY</a>
-        <div class="bg-back bg-side-grad"></div>
+    <section class="left full" id="videos-wrap" style="padding-bottom: 0;">
+        <h3>Watch the latest</h3>
+        <div class="playlists">
+            <a class="video-wrap small latest" target="_blank" id="video0-link">
+                <div class="cover">
+                    <img id="video0-thumb">
+                    <span class="hover">
+                        <span>
+                            <i class="material-icons">play_arrow</i>
+                            <h5>Click to watch</h5>
+                        </span>
+                    </span>
+                </div>
+                <div class="info">
+                    <h4 id="video0-name" translate="no"></h4>
+                    <p class="col-alt">Released <i id="video0-released"></i></p>
+                </div>
+            </a>
+            <a class="video-wrap small" target="_blank" id="video1-link">
+                <div class="cover">
+                    <img id="video1-thumb">
+                    <span class="hover">
+                        <span>
+                            <i class="material-icons">play_arrow</i>
+                            <h5>Click to watch</h5>
+                        </span>
+                    </span>
+                </div>
+                <div class="info">
+                    <h4 id="video1-name" translate="no"></h4>
+                    <p class="col-alt">Released <i id="video1-released"></i></p>
+                </div>
+            </a>
+            <a class="video-wrap small" target="_blank" id="video2-link">
+                <div class="cover">
+                    <img id="video2-thumb">
+                    <span class="hover">
+                        <span>
+                            <i class="material-icons">play_arrow</i>
+                            <h5>Click to watch</h5>
+                        </span>
+                    </span>
+                </div>
+                <div class="info">
+                    <h4 id="video2-name" translate="no"></h4>
+                    <p class="col-alt">Released <i id="video2-released"></i></p>
+                </div>
+            </a>
+            <a class="video-wrap small" target="_blank" id="video3-link">
+                <div class="cover">
+                    <img id="video3-thumb">
+                    <span class="hover">
+                        <span>
+                            <i class="material-icons">play_arrow</i>
+                            <h5>Click to watch</h5>
+                        </span>
+                    </span>
+                </div>
+                <div class="info">
+                    <h4 id="video3-name" translate="no"></h4>
+                    <p class="col-alt">Released <i id="video3-released"></i></p>
+                </div>
+            </a>
     </section>
+    <section class="center none" style="padding-top: 20px;">
+        <h3>GSOT Library</h3>
+    </section>
+    <div class="cards" id="maps"></div>
+    <div id="userRepos" style="display: none;"></div>
     <script>
-        $.get( "news/latest.md", function( data ) {
-            let cont = document.getElementById("news");
+        $.get( "news/changes.md", function( data ) {
+            let cont = document.getElementById("changes");
             var converter = new showdown.Converter();
             text = `${data}`;
             html = converter.makeHtml(text);
             cont.innerHTML = (`${html}`)       
         },'text');
     </script>
+    <script>
+        $.get( "news/project.md", function( data ) {
+            let cont = document.getElementById("project");
+            var converter = new showdown.Converter();
+            text = `${data}`;
+            html = converter.makeHtml(text);
+            cont.innerHTML = (`${html}`)       
+        },'text');
+    </script>
+    <script>
+        var channelID = "UCCWMZiBGudbFxJ1UxnShVNw";
+        var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
+        $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL)+channelID, function(data) {
+        
+        let videowrap = document.getElementById("videos-wrap");
+        if (data.items.length === 0) {
+            videowrap.style.display = "none";
+        }
+        
+        // Latest video
+        if (data.items[0] === undefined) {
+            let grab0 = document.getElementById("video0-link");
+            grab0.style.display = "none";
+        } else {
+            var link = data.items[0].link;
+            var id = link.substr(link.indexOf("=")+1);
+            var title = data.items[0].title.replace(/&amp;/g,"&");
+            var released2 = data.items[0].pubDate;
+            var thumb2 = link.substr(link.indexOf("=")+1);
+            var thumb = ("https://img.youtube.com/vi/" + thumb2 + "/maxresdefault.jpg")
+            // Date formatting
+            var d = new Date(`${released2}`);
+            var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var date = month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+            let released = (date);
+            if (released === "undefined NaN, NaN") {
+                released = "recently";
+            }
+            $("#video0-name").text(title);
+            $("#video0-released").text(released);
+            //$("#video0-thumb").attr("style",`background-image: url(${thumb});`);
+            $("#video0-thumb").attr("src",thumb);
+            $("#video0-link").attr("href",link);
+        }
+
+        // 2nd latest
+        if (data.items[1] === undefined) {
+            let grab1 = document.getElementById("video1-link");
+            grab1.style.display = "none";
+        } else {
+            var link = data.items[1].link;
+            var id = link.substr(link.indexOf("=")+1);
+            var title = data.items[1].title.replace(/&amp;/g,"&");
+            var released2 = data.items[1].pubDate;
+            var thumb2 = link.substr(link.indexOf("=")+1);
+            var thumb = ("https://img.youtube.com/vi/" + thumb2 + "/maxresdefault.jpg")
+            // Date formatting
+            var d = new Date(`${released2}`);
+            var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var date = month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+            let released1 = (date);
+            if (released1 === "undefined NaN, NaN") {
+                released1 = "Released recently";
+            }
+            $("#video1-name").text(title);
+            $("#video1-released").text(released1);
+            $("#video1-thumb").attr("src",thumb);
+            $("#video1").attr("onclick","location.href='" + link + "';");
+        }
+
+        // 3rd latest
+        if (data.items[2] === undefined) {
+            let grab2 = document.getElementById("video2-link");
+            grab2.style.display = "none";
+        } else {
+            var link = data.items[2].link;
+            var id = link.substr(link.indexOf("=")+1);
+            var title = data.items[2].title.replace(/&amp;/g,"&");
+            var released2 = data.items[2].pubDate;
+            var thumb2 = link.substr(link.indexOf("=")+1);
+            var thumb = ("https://img.youtube.com/vi/" + thumb2 + "/maxresdefault.jpg")
+            // Date formatting
+            var d = new Date(`${released2}`);
+            var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var date = month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+            let released3 = (date);
+            if (released3 === "undefined NaN, NaN") {
+                released3 = "Released recently";
+            }
+            $("#video2-name").text(title);
+            $("#video2-released").text(released3);
+            $("#video2-thumb").attr("src",thumb);
+            $("#video2").attr("onclick","location.href='" + link + "';");
+        }
+
+        // 4th latest
+        if (data.items[3] === undefined) {
+            let grab3 = document.getElementById("video3-link");
+            grab3.style.display = "none";
+        } else {
+            var link = data.items[3].link;
+            var id = link.substr(link.indexOf("=")+1);
+            var title = data.items[3].title.replace(/&amp;/g,"&");
+            var released6 = data.items[3].pubDate;
+            var thumb3 = link.substr(link.indexOf("=")+1);
+            var thumb = ("https://img.youtube.com/vi/" + thumb3 + "/maxresdefault.jpg")
+            // Date formatting
+            var d = new Date(`${released6}`);
+            var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var date = month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+            let released7 = (date);
+            if (released7 === "undefined NaN, NaN") {
+                released7 = "Released recently";
+            }
+            $("#video3-name").text(title);
+            $("#video3-released").text(released7);
+            $("#video3-thumb").attr("src",thumb);
+            $("#video3").attr("onclick","location.href='" + link + "';");
+        }
+        
+        });
+    </script>
     <div class="gap" style="height: 150px;"></div>
     <footer class="dark">
         <div class="flex">
             <span class="brand">
                 <div class="main">
-                    <h2>Grand Scheme of Things</h2>
+                    <h2>GSOT</h2>
                     <p>Founded in April 2020, website by <a href="https://plexion.dev" target="_blank">plexion</a></p>
                     <br>
+                    <label class="over">ACCESSIBILITY</label>
                     <br>
-                    <br>
-                    <br>
-                    <label class="overl">Accessibility options:</label>
                     <br>
                     <a role="button" onclick="toggleDyslexicFont()" href="javascript:void(0);" class="button left opendyslexic-toggle">OpenDyslexic Font</a>
                     <a role="button" onclick="toggleHyperlegibleFont()" href="javascript:void(0);" class="button left hyperlegible-toggle">Hyperlegible Font</a>
@@ -117,6 +300,7 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/library">Library</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </span>
@@ -129,6 +313,16 @@
                     </ul>
                 </span>
             </span>
+        </div>
+        <div class="padding">
+            <div class="socials">
+                <a class="social-icon" target="_blank" href="https://youtube.com/channel/UCCWMZiBGudbFxJ1UxnShVNw" data-tooltip="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="social-icon" target="_blank" href="https://planetminecraft.com/member/gsot" data-tooltip="PMC">
+                    <i class="fas fa-ellipsis-h"></i>
+                </a>
+            </div>
         </div>
     </footer>
 </body>

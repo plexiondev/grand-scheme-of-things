@@ -1,23 +1,24 @@
-// Create new XMLHttpRequest object
+// get repos from github
+
+
+// define xhr GET
 const xhr = new XMLHttpRequest();
-
-// GitHub endpoint, dynamically passing in specified username
 const url = `https://api.github.com/orgs/plex1on/repos`;
-
-// Open a new connection, using a GET request via URL endpoint
-// Providing 3 arguments (GET/POST, The URL, Async True/False)
 xhr.open('GET', url, true);
 
-// When request is received
-// Process it here
+
+// request is received
 xhr.onload = function() {
 
-    // Parse API data into JSON
+    // parse
     const data = JSON.parse(this.response)
     let root = document.getElementById('userRepos');
+
     while (root.firstChild) {
         root.removeChild(root.firstChild);
     }
+
+    // error response
     if (data.message === "Not Found") {
         let ul = document.getElementById('error');
 
@@ -33,53 +34,59 @@ xhr.onload = function() {
             </div>
         </section>
         `);
-    } else {
+    } else { // success
 
-        // Get the ul with id of of userRepos
+        // get lists
+        let maps = document.getElementById('maps');
+        // deprecated (still required for now)
         let header = document.getElementById('reposHeader');
         let ul = document.getElementById('userRepos');
-        let datapacks = document.getElementById('datapacks');
-        let resourcepacks = document.getElementById('resourcepacks');
-        let maps = document.getElementById('maps');
-        // Loop over each object in data array
+
+        // loop over pool
         for (let i in data) {
 
-            // Create variable that will create li's to be added to ul
-            let li = document.createElement('a');
-            //li.href = `${data[i].html_url}`
-            let link = `${data[i].name}`.replace(/\-/g,'').toLowerCase();
-            li.href = `/library/${link}/`
+            // create element
+            let card = document.createElement('a');
+            card.classList.add('card');
+            card.classList.add('hover');
+            
+            // parse link
+            let link = `${data[i].name}`.replace(/\-/g,'').toLowerCase(); //replace dashes with empty & lower
+            card.href = `/library/${link}/`
 
-            // Add Bootstrap list item class to each li
-            li.classList.add('card')
-            li.classList.add('hover')
-
-            // Date formatting
+            // update date
             var d = new Date(`${data[i].pushed_at}`);
             var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
             var date = month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
 
-            let updated = (date);
-            // Create the html markup for each li
-            let name = `${data[i].name}`.replace(/\-/g,' ');
-            li.innerHTML = (`
+            // name
+            let name = `${data[i].name}`.replace(/\-/g,' '); //replace dashes with spaces
+
+            // html
+            card.innerHTML = (`
             <div class="cover"><img src="/library/${link}/cover.png"></div>
             <div class="info">
-            <h3 class="text-20">${name}</h3>
+            <h4 class="text-20">${name}</h4>
             <p>${data[i].description}</p>
-            <p class="col-alt over">${updated}</p>
+            <p class="col-alt over">${date}</p>
+            </div>
+            <div class="featuring">
+            <svg class="datapack" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code icon w-20"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <svg class="resourcepack" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy icon w-20"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="map" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe icon w-20"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             </div>
             `);
 
-            // append
+            // project tags/(topics)
             let topics = data[i].topics;
-            if (topics[0] == "datapack") {
-                datapacks.appendChild(li);
-            } else if (topics[0] == "resourcepack" || name == "Metro Dark Theme") {
-                resourcepacks.appendChild(li);
-            } else if (topics[0] == "map") {
-                maps.appendChild(li);
+            for (let t2 in data[i].topics) {
+                let t = topics[t2];
+
+                if (t == "gsot") {
+                    // maps
+                    maps.appendChild(card);
+                    card.classList.add("map");
+                } // skip if else
             }
 
         }
@@ -87,5 +94,6 @@ xhr.onload = function() {
     }
 }
 
-// Send the request to the server
+
+// send
 xhr.send();

@@ -1,0 +1,103 @@
+/* plexion.dev/library */
+
+
+/* cards */
+.cards-p {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+    transition: 0.2s;
+    padding: 20px;
+}
+
+/* card */
+.card-p {
+    transition: 0.3s;
+    border-radius: 10px;
+    position: relative;
+    bottom: 0;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none !important;
+    background-color: var(--raise-bg);
+    box-shadow: var(--raise-0);
+}
+.card-p:active:not(.reduced-motion .card-p:active) {
+    transform: scale(0.97);
+    outline: none;
+}
+.card-p.hover {
+    cursor: pointer;
+}
+.card-p.hover:hover, .card-p.hover:focus {
+    background-color: var(--raise-hover);
+}
+/* feat. icons */
+.card-p .featuring {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    opacity: 0.5;
+    display: inline-flex;
+    transition: 0.3s;
+    color: var(--text-main);
+}
+.card-p:hover .featuring, .card-p:focus .featuring {
+    opacity: 1;
+}
+.card-p .featuring svg {
+    top: 0 !important;
+    display: none;
+}
+/* show if match */
+.card-p.datapack .featuring svg.datapack, .card-p.resourcepack .featuring svg.resourcepack, .card-p.map .featuring svg.map {
+    display: initial;
+}
+
+/* cover */
+.card-p .cover {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background: var(--raise-bg);
+    max-height: 250px;
+    border-radius: 10px;
+}
+.card-p .cover img {
+    width: 100%;
+    transition: 0.3s;
+}
+.card-p.hover:hover .cover img:not(.reduced-motion .card-p.hover:hover .cover img), .card-p.hover:focus .cover img:not(.reduced-motion .card-p.hover:focus .cover img) {
+    transform: scale(1.1);
+    filter: brightness(110%);
+}
+/* info block */
+.card-p .info {
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    min-height: 110px;
+    position: relative;
+}
+.card-p .info h1, .card-p .info h2, .card-p .info h3, .card-p .info h4 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.card-p .info p {
+    padding-top: 3px;
+}
+.card-p .info .over {
+    margin-top: 10px;
+    padding: 0;
+}
+.card-p .info .over:not(.tag):after {
+    content: '';
+    display: block;
+    height: 5px;
+}
+.card-p .info.big {
+    min-height: 135px;
+}

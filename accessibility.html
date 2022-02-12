@@ -27,23 +27,69 @@
 <body class="dark" style="--accent-page: var(--home);">
     <header class="dark">
         <a class="brand" href="/">
-            <img src="img/brand.png">
+            <img src="/img/gsot.png">
         </a>
         <span class="links">
             <a href="/" aria-label="Home"><i class="icon w-20" stroke-width="2.5" data-feather="home"></i><i class="text">Home<span class="bar"></span></i></a>
             <a href="/about" aria-label="About"><i class="icon w-20" stroke-width="2.5" data-feather="info"></i><i class="text">about<span class="bar"></span></i></a>
+            <a href="/library" aria-label="Library"><i class="icon w-20" stroke-width="2.5" data-feather="book"></i><i class="text">Library<span class="bar"></span></i></a>
             <a href="/contact" aria-label="Contact"><i class="icon w-20" stroke-width="2.5" data-feather="mail"></i><i class="text">contact<span class="bar"></span></i></a>
         </span>
         <span class="menu">
             <span class="dropdown-wrap">
-                <a href="/accessibility" aria-label="Options" class="option-open"><i class="material-icons" translate="no">accessibility_new</i><span class="bar"></span></a>
+                <a href="/accessibility" aria-label="Options" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i><span class="bar"></span></a>
             </span>
         </span>
     </header>
-    <section class="left header padding dark alt">
-        <h1 class="text-36">Visibility enhancements</h1>
-        <a class="button focus left" href="https://github.com/plexiondev/plexiondev.github.io/issues">Give feedback</a>
+    <section class="center header padding accent">
+        <h1 class="text-56">Visibility enhancements</h1>
+        <p class="text-20">Modify fonts, colours, animations and other things you may not want.</p>
+        <a class="button icon con" href="https://github.com/plexiondev/plexiondev.github.io/issues">Give feedback</a>
     </section>
+    <!--<section class="left settings">
+        <div class="head">
+            <label class="overl">Seasonal theming</label>
+        </div>
+        <ul class="inner">
+            <li class="setting" id="snow-particles" onclick="toggleSnow()">
+                <span class="text">
+                    <span class="icon">
+                        <div class="headline-icon min-icon">
+                            <i translate="no" class="material-icons">ac_unit</i>
+                        </div>
+                    </span>
+                    <span class="info">
+                        <h5 class="text-16">Disable snow particles</h5>
+                    </span>
+                </span>
+                <span class="option">
+                    <a role="toggle" class="toggle toggleSnow" href="javascript:void(0);" tabindex="-1"></a>
+                </span>
+            </li>
+        </ul>
+    </section> End Christmas 2021 -->
+    <!--<section class="left settings">
+        <div class="head">
+            <label class="overl">Library views</label>
+        </div>
+        <ul class="inner">
+            <li class="setting" id="legacy-gallery" onclick="legacyGallery()">
+                <span class="text">
+                    <span class="icon">
+                        <div class="headline-icon min-icon">
+                            <i translate="no" class="material-icons">collections</i>
+                        </div>
+                    </span>
+                    <span class="info">
+                        <h5 class="text-16">Use grid view on Library pages</h5>
+                    </span>
+                </span>
+                <span class="option">
+                    <a role="toggle" class="toggle toggleGallery" href="javascript:void(0);" tabindex="-1"></a>
+                </span>
+            </li>
+        </ul>
+    </section>-->
     <section class="left settings">
         <div class="head">
             <label class="overl">Display mode</label>
@@ -53,7 +99,7 @@
                 <span class="text">
                     <span class="icon">
                         <div class="headline-icon min-icon">
-                            <i translate="no" class="material-icons">flaky</i>
+                            <i class="icon w-24" data-feather="eye"></i>
                         </div>
                     </span>
                     <span class="info">
@@ -75,11 +121,11 @@
                 <span class="text">
                     <span class="icon">
                         <div class="headline-icon min-icon">
-                            <i translate="no" class="material-icons">font_download</i>
+                            <i class="icon w-24" data-feather="type"></i>
                         </div>
                     </span>
                     <span class="info">
-                        <h5 class="text-16">Prefer OpenDyslexic font</h5>
+                        <h5 class="text-16">OpenDyslexic font</h5>
                     </span>
                 </span>
                 <span class="option">
@@ -90,30 +136,15 @@
                 <span class="text">
                     <span class="icon">
                         <div class="headline-icon min-icon">
-                            <i translate="no" class="material-icons">font_download</i>
+                            <i class="icon w-24" data-feather="type"></i>
                         </div>
                     </span>
                     <span class="info">
-                        <h5 class="text-16">Prefer Atkinson Hyperlegible font</h5>
+                        <h5 class="text-16">Atkinson Hyperlegible font</h5>
                     </span>
                 </span>
                 <span class="option">
                     <a role="toggle" class="toggle toggleHyperlegibleFont" href="javascript:void(0);" tabindex="-1"></a>
-                </span>
-            </li>
-            <li class="setting" id="helvetica-font" onclick="toggleHelveticaFont()">
-                <span class="text">
-                    <span class="icon">
-                        <div class="headline-icon min-icon">
-                            <i translate="no" class="material-icons">font_download</i>
-                        </div>
-                    </span>
-                    <span class="info">
-                        <h5 class="text-16">Use Helvetica font</h5>
-                    </span>
-                </span>
-                <span class="option">
-                    <a role="toggle" class="toggle toggleHelveticaFont" href="javascript:void(0);" tabindex="-1"></a>
                 </span>
             </li>
         </ul>
@@ -127,7 +158,7 @@
                 <span class="text">
                     <span class="icon">
                         <div class="headline-icon min-icon">
-                            <i translate="no" class="material-icons">auto_awesome_motion</i>
+                            <i class="icon w-24" data-feather="copy"></i>
                         </div>
                     </span>
                     <span class="info">
@@ -142,7 +173,7 @@
                 <span class="text">
                     <span class="icon">
                         <div class="headline-icon min-icon">
-                            <i translate="no" class="material-icons">format_color_fill</i>
+                            <i class="icon w-24" data-feather="sun"></i>
                         </div>
                     </span>
                     <span class="info">
@@ -157,7 +188,7 @@
                 <span class="text">
                     <span class="icon">
                         <div class="headline-icon min-icon">
-                            <i translate="no" class="material-icons">wallpaper</i>
+                            <i class="icon w-24" data-feather="film"></i>
                         </div>
                     </span>
                     <span class="info">
@@ -175,13 +206,11 @@
         <div class="flex">
             <span class="brand">
                 <div class="main">
-                    <h2>Grand Scheme of Things</h2>
+                    <h2>GSOT</h2>
                     <p>Founded in April 2020, website by <a href="https://plexion.dev" target="_blank">plexion</a></p>
                     <br>
+                    <label class="over">ACCESSIBILITY</label>
                     <br>
-                    <br>
-                    <br>
-                    <label class="overl">Accessibility options:</label>
                     <br>
                     <a role="button" onclick="toggleDyslexicFont()" href="javascript:void(0);" class="button left opendyslexic-toggle">OpenDyslexic Font</a>
                     <a role="button" onclick="toggleHyperlegibleFont()" href="javascript:void(0);" class="button left hyperlegible-toggle">Hyperlegible Font</a>
@@ -193,6 +222,7 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
+                        <li><a href="/library">Library</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </span>
@@ -205,6 +235,16 @@
                     </ul>
                 </span>
             </span>
+        </div>
+        <div class="padding">
+            <div class="socials">
+                <a class="social-icon" target="_blank" href="https://youtube.com/channel/UCCWMZiBGudbFxJ1UxnShVNw" data-tooltip="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="social-icon" target="_blank" href="https://planetminecraft.com/member/gsot" data-tooltip="PMC">
+                    <i class="fas fa-ellipsis-h"></i>
+                </a>
+            </div>
         </div>
     </footer>
 </body>
