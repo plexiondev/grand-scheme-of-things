@@ -3895,6 +3895,21 @@ svg.icon.no-align {
         padding: 15px 5px;
     }
 
+
+    /* user cards */
+    .user-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        grid-gap: 20px;
+        transition: 0.2s;
+        padding: 15px 5px;
+    }
+    /* reduce icon size */
+    .user-card .icon img {
+        max-width: 100px;
+    }
+
+
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
