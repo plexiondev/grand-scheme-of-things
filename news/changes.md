@@ -1,7 +1,5 @@
-## SG [2022.0212](https://github.com/plex1on/Survival-Games/commit/d44a03716f49ead304e8f8eff74212377eedc9aa)
+## SG [2022.0213](https://github.com/plex1on/Survival-Games-Map/releases/tag/2022.0213)
 
-- Reduced border closure speed
-- Removed supply crate explosion
-- Forceloaded all supply markers
-- Incremented version number
-- Updated bundled pack
+- enabled world cheats
+- fixed worldborder
+- blocked off a place that definitely wasn't an easter egg coming soon (stay tuned)
