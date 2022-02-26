@@ -197,24 +197,16 @@
         </ol>
         <br>
         <p class="text-16">Now you have the world file, there are multiple ways you can set this up:</p>
-        <h5>Host with a server</h5>
-        <ol>
-            <li>Download the latest <code>server.jar</code> over at <a href="https://minecraft.net">minecraft.net</a> and launch it</li>
-            <li>When the program closes, in the same directory open <code>eula.txt</code></li>
-            <li>Replace the <code>false</code> with <code>true</code> to accept the <a href="https://minecraft.net/en-us/eula/">EULA</a></li>
-            <li>Extract the .zip file and place the contents of it into a new folder called <code>world</code></li>
-            <li>Set-up <code>25565</code> port-forwarding on your router, more info @ <a href="https://portforward.com/softwareguides/minecraft/portforward-minecraft.htm">portforward.com</a></li>
-            <li>Once finished, launch up your server and share your IP that they can use to connect with!</li>
-        </ol>
-        <br>
-        <h5>Host with Realms</h5>
-        <p class="text-14">This requires an active subscription to Minecraft Realms on Java Edition</p>
-        <ol>
-            <li>Navigate to <code>Minecraft Realms</code> from the main menu and press the <code><i translate="no" class="material-icons">build</i></code> button</li>
-            <li>Choose one of the three presented world slots and select <code>Reset world</code> then <code>Upload world</code></li>
-            <li>Select the Haunting Hunters save from this menu and wait for it to be uploaded</li>
-            <li>Once finished, invite your friends to the realm and have some fun!</li>
-        </ol>
+        <div id="install-steps"></div>
+        <script>
+            $.get( "/library/server.md", function( data ) {
+                let cont = document.getElementById("install-steps");
+                var converter = new showdown.Converter();
+                text = `${data}`;
+                html = converter.makeHtml(text);
+                cont.innerHTML = (`${html}`);
+            },'text');
+        </script>
     </section>
     <footer class="dark">
         <div class="flex">
