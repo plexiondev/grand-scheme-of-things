@@ -30,12 +30,12 @@
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <!-- js scripts -->
     <script src="/js/scroll.js"></script>
-    <script src="info.js"></script>
     <!-- icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <script src="https://kit.fontawesome.com/20a071237e.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
+<repo id="repo">haunting-hunters</repo>
 <body class="dark" style="--accent-page: var(--home);">
     <header class="dark">
         <a class="brand" href="/">
@@ -57,52 +57,12 @@
         <section class="min header padding"><div class="bg-dark lib-grad"></div></section>
     </div>
     <section class="left header no-sep no-align" id="overview">
-        <label class="over tag archived-tag">THIS PROJECT IS ARCHIVED AND WILL NOT RECEIVE FUTURE UPDATES</label>
-        <h2 translate="no">Haunting Hunters <label class="over tag beta-tag" translate="yes">BETA</label></h2>
-        <div class="creator">
-            <p class="text-16">by</p>
-            <a href="https://gsot.plexion.dev" target="_blank">
-                <img src="/img/gsot.png">
-                <h5 class="text-16">Grand Scheme of Things</h5>
-            </a>
-        </div>
+        <h2 translate="no" id="repo_name">Haunting Hunters</h2>
+        <div class="creator" id="creators"></div>
         <p class="text-18">The Grand Scheme of Things, "Haunting Hunters" was a group project to create a fun and unique take on the classic Hide & Seek formula. Hide inside or outside the great mansion or seek to find and kill the hiders. Use a range of powerups to your advantage, bought before the game, to help you score the victory for your team.</p>
         <a role="button" class="button focus left icon outline dow" href="https://github.com/plex1on/haunting-hunters/releases/latest/download/Haunting.Hunters.zip">Download</a>
         <a role="button" class="button icon con" href="#installation">Installing</a>
-        <div class="info-blocks">
-            <div class="dl-wrap">
-                <!--<span class="desc">
-                    <p class="col-alt">Downloads</p>
-                    <p id="release-downloads">0</p>
-                </span>-->
-                <dl>
-                    <dt>Supports</dt>
-                    <dd>1.15</dd>
-                </dl>
-                <dl>
-                    <dt>Updated</dt>
-                    <dd id="updated"></dd>
-                </dl>
-                <dl>
-                    <dt>Released</dt>
-                    <dd>10/06/2020</dd>
-                </dl>
-            </div>
-            <div class="dl-wrap">
-                <dl>
-                    <dt>Tags</dt>
-                    <dd id="tags"></dd>
-                </dl>
-                <dl>
-                    <dt>Links</dt>
-                    <dd><a href="https://www.planetminecraft.com/project/hide-amp-seek-4213912" target="_blank">PMC</a></dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd><a href="https://github.com/plex1on/haunting-hunters" target="_blank">Github</a></dd>
-                </dl>
-            </div>
-        </div>
+        <div class="info-blocks" id="info_blocks"></div>
     </section>
     <section class="left header sep no-align" id="whats-new">
         <h4>What's New</h4>
@@ -115,76 +75,20 @@
             </div>
         </div>
     </section>
+    <script src="https://plexion.dev/js/info.js"></script>
     <section class="left header sep no-align" id="gallery">
         <h4>Gallery</h4>
-        <div class="gallery">
-            <span class="img">
-                <div class="video">
-                    <iframe src="https://www.youtube-nocookie.com/embed/KDY_zZZVCA0?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
-                </div>
-                <p class="text-14 cap">Featured video from my channel</p>
-            </span>
-            <span class="img">
-                <img src="cover-big.png">
-                <p class="text-14 cap">Cover art</p>
-            </span>
-            <span class="img">
-                <img src="gal3.png">
-                <p class="text-14 cap">An outside view of the mansion</p>
-            </span>
-            <span class="img">
-                <img src="gal4.png">
-                <p class="text-14 cap">A view of the spawn</p>
-            </span>
-            <span class="img">
-                <img src="gal0.png">
-                <p class="text-14 cap">The Corridors</p>
-            </span>
-            <span class="img">
-                <img src="gal1.png">
-                <p class="text-14 cap">The Basement</p>
-            </span>
-            <span class="img">
-                <img src="gal2.png">
-                <p class="text-14 cap">Studio</p>
-            </span>
-
-            <!-- NEXT/PREV -->
-            <a role="button" class="arrow prev" onclick="plusSlides(-1)"><i class="icon w-24" data-feather="arrow-left"></i></a>
-            <a role="button" class="arrow next" onclick="plusSlides(1)"><i class="icon w-24" data-feather="arrow-right"></i></a>
+        <div class="gallery" id="gallery_inner">
+            <a role="button" class="arrow prev" onclick="change(-1)"><i class="icon w-24" data-feather="arrow-left"></i></a>
+            <a role="button" class="arrow next" onclick="change(1)"><i class="icon w-24" data-feather="arrow-right"></i></a>
         </div>
-        <div class="gallery-legacy">
-            <a role="button" class="gallery-switch" onclick="legacyGallery()">Swap to</a>
-        </div>
-        <div class="dot"></div>
+        <div class="img-preview" id="gallery_preview"></div>
+        <div class="gallery-legacy" id="gallery_switch"></div>
     </section>
-    <script src="/js/gallery.js"></script>
+    <script src="https://plexion.dev/js/gallery.js"></script>
     <section class="left header sep no-align" id="featuring">
         <h4>Featuring</h4>
-        <div class="supports">
-            <span class="desc">
-                <span class="icon">
-                    <div class="headline-icon min">
-                        <i class="icon w-24" data-feather="users"></i>
-                    </div>
-                </span>
-                <span class="text">
-                    <h5>Multiplayer</h5>
-                    <p>By using Minecraft Realms or hosting a server, you can invite as many players as you want to play as either a hider or a seeker.</p>
-                </span>
-            </span>
-            <span class="desc">
-                <span class="icon">
-                    <div class="headline-icon min">
-                        <i class="icon w-24" data-feather="shopping-cart"></i>
-                    </div>
-                </span>
-                <span class="text">
-                    <h5>Powerups!</h5>
-                    <p>Before the game starts, you are given a set of gold to purchase a range of powerups to affect the opposing team or help you in a close situation.</p>
-                </span>
-            </span>
-        </div>
+        <div class="supports" id="supports"></div>
     </section>
     <section class="left header sep no-align" id="installation">
         <h4>Installation & Setup</h4>
