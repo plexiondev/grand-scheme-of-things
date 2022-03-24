@@ -66,7 +66,7 @@ xhr.onload = function() {
             card.innerHTML = (`
             <div class="cover"><img src="/library/${link}/cover.png"></div>
             <div class="info">
-            <h4 class="text-20">${name}</h4>
+            <h4>${name}</h4>
             <p>${data[i].description}</p>
             <p class="col-alt over">${date}</p>
             </div>
