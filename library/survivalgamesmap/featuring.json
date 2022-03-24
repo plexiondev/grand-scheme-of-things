@@ -1,0 +1,215 @@
+{
+    "name": "libraryv2",
+    "version": "2022.0324",
+    "type": "map",
+    "info": {
+        "main": [
+            {
+                "type": "version",
+                "value": "1.18"
+            },
+            {
+                "type": "released",
+                "value": "17/12/2021"
+            }
+        ],
+        "links": [
+            {
+                "type": "pmc",
+                "link": "project/gsot-survival-games"
+            },
+            {
+                "type": "github",
+                "link": "survival-games-map"
+            },
+            {
+                "type": "issues",
+                "link": "grandschemeofthingsyt@gmail.com"
+            }
+        ],
+        "creators": [
+            {
+                "type": "by",
+                "link": "https://gsot.plexion.dev",
+                "name": "GSOT",
+                "icon": "https://gsot.plexion.dev/img/gsot.png",
+                "icon_type": "web"
+            },
+            {
+                "type": "contribution",
+                "link": "https://youtube.com/channel/UCcdf6046yijxg0AFSlU_IRw",
+                "name": "Ozip",
+                "icon": "9830e49f-c0af-4f87-a8d2-7626d77ab93b",
+                "icon_type": "crafatar"
+            },
+            {
+                "type": "contribution",
+                "link": "https://youtube.com/channel/UCfBltMEeb5UprQg3hg7ejsA",
+                "name": "longofire236",
+                "icon": "f56c52fe-6c1b-4e62-ae6b-b51a1b48a15d",
+                "icon_type": "crafatar"
+            }
+        ]
+    },
+    "features": [
+        {
+            "icon": "package",
+            "id": "gsot-datapack",
+            "name": "Datapack included",
+            "description": "The map comes pre-bundled with the Survival Games datapack."
+        }
+    ],
+    "gallery": [
+        {
+            "type": "video",
+            "link": "Utcq254YaP",
+            "src": "youtube",
+            "caption": "Trailer from GSOT"
+        },
+        {
+            "type": "image",
+            "link": "cover-big.png",
+            "caption": "Cover art"
+        },
+        {
+            "type": "image",
+            "link": "gal0.png"
+        },
+        {
+            "type": "image",
+            "link": "gal1.png"
+        },
+        {
+            "type": "image",
+            "link": "gal2.png"
+        },
+        {
+            "type": "image",
+            "link": "gal3.png"
+        },
+        {
+            "type": "image",
+            "link": "gal4.png"
+        },
+        {
+            "type": "image",
+            "link": "gal5.png"
+        },
+        {
+            "type": "image",
+            "link": "gal6.png"
+        },
+        {
+            "type": "image",
+            "link": "gal7.png"
+        },
+        {
+            "type": "image",
+            "link": "gal8.png"
+        },
+        {
+            "type": "image",
+            "link": "gal9.png"
+        },
+        {
+            "type": "image",
+            "link": "gal10.png"
+        },
+        {
+            "type": "image",
+            "link": "gal11.png"
+        },
+        {
+            "type": "image",
+            "link": "gal12.png"
+        },
+        {
+            "type": "image",
+            "link": "gal13.png"
+        },
+        {
+            "type": "image",
+            "link": "gal14.png"
+        },
+        {
+            "type": "image",
+            "link": "gal15.png"
+        },
+        {
+            "type": "image",
+            "link": "gal16.png"
+        },
+        {
+            "type": "image",
+            "link": "gal17.png"
+        },
+        {
+            "type": "image",
+            "link": "gal18.png"
+        },
+        {
+            "type": "image",
+            "link": "gal19.png"
+        },
+        {
+            "type": "image",
+            "link": "gal25.png"
+        },
+        {
+            "type": "image",
+            "link": "gal26.png"
+        },
+        {
+            "type": "image",
+            "link": "gal27.png"
+        },
+        {
+            "type": "image",
+            "link": "gal28.png"
+        },
+        {
+            "type": "image",
+            "link": "gal29.png"
+        },
+        {
+            "type": "image",
+            "link": "gal30.png"
+        },
+        {
+            "type": "image",
+            "link": "gal21.png"
+        },
+        {
+            "type": "image",
+            "link": "gal32.png"
+        },
+        {
+            "type": "image",
+            "link": "gal33.png"
+        },
+        {
+            "type": "image",
+            "link": "gal34.png"
+        },
+        {
+            "type": "image",
+            "link": "gal20.png"
+        },
+        {
+            "type": "image",
+            "link": "gal21.png"
+        },
+        {
+            "type": "image",
+            "link": "gal22.png"
+        },
+        {
+            "type": "image",
+            "link": "gal23.png"
+        },
+        {
+            "type": "image",
+            "link": "gal24.png"
+        }
+    ]
+}

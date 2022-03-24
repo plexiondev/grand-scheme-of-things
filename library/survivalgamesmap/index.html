@@ -31,12 +31,12 @@
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <!-- js scripts -->
     <script src="/js/scroll.js"></script>
-    <script src="info.js"></script>
     <!-- icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <script src="https://kit.fontawesome.com/20a071237e.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
+<repo id="repo">survival-games-map</repo>
 <body class="dark" style="--accent-page: var(--home);">
     <header class="dark">
         <a class="brand" href="/">
@@ -58,67 +58,12 @@
         <section class="min header padding"><div class="bg-dark lib-grad"></div></section>
     </div>
     <section class="left header no-sep no-align" id="overview">
-        <label class="over tag archived-tag">THIS PROJECT IS ARCHIVED AND WILL NOT RECEIVE FUTURE UPDATES</label>
-        <h2 translate="no">Survival Games Map <label class="over tag beta-tag" translate="yes">BETA</label></h2>
-        <div class="creator">
-            <p class="text-16">by</p>
-            <a href="/" target="_blank">
-                <img src="/img/gsot.png">
-                <h5 class="text-16">GSOT</h5>
-            </a>
-            <h5 class="text-16">+</h5>
-            <span class="others">
-                <a href="https://youtube.com/channel/UCcdf6046yijxg0AFSlU_IRw" target="_blank" data-tooltip="Ozip">
-                    <img src="https://crafatar.com/avatars/9830e49f-c0af-4f87-a8d2-7626d77ab93b?overlay">
-                    <h5 class="text-16">Ozip</h5>
-                </a>
-                <a href="https://youtube.com/channel/UCfBltMEeb5UprQg3hg7ejsA" target="_blank" data-tooltip="longofire236">
-                    <img src="https://crafatar.com/avatars/f56c52fe-6c1b-4e62-ae6b-b51a1b48a15d?overlay">
-                    <h5 class="text-16">longofire236</h5>
-                </a>
-            </span>
-        </div>
+        <h2 translate="no" id="repo_name">Survival Games Map</h2>
+        <div class="creator" id="creators"></div>
         <p class="text-18">Play in a custom-built survival games map, powered by the bundled survival games datapack. Featuring supply drops, custom loot tables, a custom-built border and much more. Play today for a bewildering, never-before-seen excitement-filled adventure that will brighten your entire week.</p>
         <a role="button" class="button focus left icon outline dow" href="https://github.com/plex1on/survival-games-map/releases/latest/download/GSOT-SG.zip">Download</a>
         <a role="button" class="button icon con" href="#installation">Installing</a>
-        <div class="info-blocks">
-            <div class="dl-wrap">
-                <!--<span class="desc">
-                    <p class="col-alt">Downloads</p>
-                    <p id="release-downloads">0</p>
-                </span>-->
-                <dl>
-                    <dt>Supports</dt>
-                    <dd>1.18</dd>
-                </dl>
-                <dl>
-                    <dt>Updated</dt>
-                    <dd id="updated"></dd>
-                </dl>
-                <dl>
-                    <dt>Released</dt>
-                    <dd>17/12/2021</dd>
-                </dl>
-            </div>
-            <div class="dl-wrap">
-                <dl>
-                    <dt>Tags</dt>
-                    <dd id="tags"></dd>
-                </dl>
-                <dl>
-                    <dt>Links</dt>
-                    <dd><a href="https://www.planetminecraft.com/project/gsot-survival-games" target="_blank">PMC</a></dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd><a href="https://github.com/plex1on/survival-games-map" target="_blank">Github</a></dd>
-                </dl>
-                <dl>
-                    <dt></dt>
-                    <dd><a href="mailto:grandschemeofthingsyt@gmail.com" target="_blank">Send Issues</a></dd>
-                </dl>
-            </div>
-        </div>
+        <div class="info-blocks" id="info_blocks"></div>
     </section>
     <section class="left header sep no-align" id="whats-new">
         <h4>What's New</h4>
@@ -131,146 +76,20 @@
             </div>
         </div>
     </section>
+    <script src="https://plexion.dev/js/info.js"></script>
     <section class="left header sep no-align" id="gallery">
         <h4>Gallery</h4>
-        <div class="gallery">
-            <span class="img">
-                <div class="video">
-                    <iframe src="https://www.youtube-nocookie.com/embed/Utcq254YaPo?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
-                </div>
-                <p class="text-14 cap">Trailer</p>
-            </span>
-            <span class="img">
-                <img src="gal0.png">
-            </span>
-            <span class="img">
-                <img src="gal1.png">
-            </span>
-            <span class="img">
-                <img src="gal2.png">
-            </span>
-            <span class="img">
-                <img src="gal3.png">
-            </span>
-            <span class="img">
-                <img src="gal4.png">
-            </span>
-            <span class="img">
-                <img src="gal5.png">
-            </span>
-            <span class="img">
-                <img src="gal6.png">
-            </span>
-            <span class="img">
-                <img src="gal7.png">
-            </span>
-            <span class="img">
-                <img src="gal8.png">
-            </span>
-            <span class="img">
-                <img src="gal9.png">
-            </span>
-            <span class="img">
-                <img src="gal10.png">
-            </span>
-            <span class="img">
-                <img src="gal11.png">
-            </span>
-            <span class="img">
-                <img src="gal12.png">
-            </span>
-            <span class="img">
-                <img src="gal13.png">
-            </span>
-            <span class="img">
-                <img src="gal14.png">
-            </span>
-            <span class="img">
-                <img src="gal15.png">
-            </span>
-            <span class="img">
-                <img src="gal16.png">
-            </span>
-            <span class="img">
-                <img src="gal17.png">
-            </span>
-            <span class="img">
-                <img src="gal18.png">
-            </span>
-            <span class="img">
-                <img src="gal19.png">
-            </span>
-            <span class="img">
-                <img src="gal25.png">
-            </span>
-            <span class="img">
-                <img src="gal26.png">
-            </span>
-            <span class="img">
-                <img src="gal27.png">
-            </span>
-            <span class="img">
-                <img src="gal28.png">
-            </span>
-            <span class="img">
-                <img src="gal29.png">
-            </span>
-            <span class="img">
-                <img src="gal30.png">
-            </span>
-            <span class="img">
-                <img src="gal31.png">
-            </span>
-            <span class="img">
-                <img src="gal32.png">
-            </span>
-            <span class="img">
-                <img src="gal33.png">
-            </span>
-            <span class="img">
-                <img src="gal34.png">
-            </span>
-            <span class="img">
-                <img src="gal20.png">
-            </span>
-            <span class="img">
-                <img src="gal21.png">
-            </span>
-            <span class="img">
-                <img src="gal22.png">
-            </span>
-            <span class="img">
-                <img src="gal23.png">
-            </span>
-            <span class="img">
-                <img src="gal24.png">
-            </span>
-
-            <!-- NEXT/PREV -->
-            <a role="button" class="arrow prev" onclick="plusSlides(-1)"><i class="icon w-24" data-feather="arrow-left"></i></a>
-            <a role="button" class="arrow next" onclick="plusSlides(1)"><i class="icon w-24" data-feather="arrow-right"></i></a>
+        <div class="gallery" id="gallery_inner">
+            <a role="button" class="arrow prev" onclick="change(-1)"><i class="icon w-24" data-feather="arrow-left"></i></a>
+            <a role="button" class="arrow next" onclick="change(1)"><i class="icon w-24" data-feather="arrow-right"></i></a>
         </div>
-        <div class="gallery-legacy">
-            <a role="button" class="gallery-switch" onclick="legacyGallery()">Swap to</a>
-        </div>
-        <div class="dot"></div>
+        <div class="img-preview" id="gallery_preview"></div>
+        <div class="gallery-legacy" id="gallery_switch"></div>
     </section>
-    <script src="/js/gallery.js"></script>
+    <script src="https://plexion.dev/js/gallery.js"></script>
     <section class="left header sep no-align" id="featuring">
         <h4>Featuring</h4>
-        <div class="supports">
-            <span class="desc">
-                <span class="icon">
-                    <div class="headline-icon min">
-                        <i class="icon w-24" data-feather="package"></i>
-                    </div>
-                </span>
-                <span class="text">
-                    <h5>Datapack included</h5>
-                    <p>The map comes pre-bundled with the Survival Games datapack.</p>
-                </span>
-            </span>
-        </div>
+        <div class="supports" id="supports"></div>
     </section>
     <section class="left header sep no-align" id="installation">
         <h4>Installation & Setup</h4>
