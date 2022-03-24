@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+    <!-- meta info -->
+    <title id="page-title">Rate limits | GSOT</title>
+    <meta name="theme-color" content="#003BFF">
+    <!-- mobile iOS support -->
+    <link rel="apple-touch-icon" href="/img/ios.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="https://plexion.dev/site.webmanifest">
+    <!-- display -->
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="https://plexion.dev/css/reset.css">
+    <link rel="stylesheet" href="https://plexion.dev/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- icon -->
+    <link rel="shortcut icon" type="ico" href="/favicon.ico"/>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <!-- js scripts -->
+    <script src="/js/scroll.js"></script>
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20a071237e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="dark" style="--accent-page: var(--library);">
+    <div class="logs" id="log_parent"></div>
+    <script src="https://plexion.dev/js/logging.js"></script>
+    <header class="dark">
+        <a class="brand" href="/">
+            <img src="/img/gsot.png">
+        </a>
+        <span class="links">
+            <a href="/" aria-label="Home"><i class="icon w-20" stroke-width="2.5" data-feather="home"></i><i class="text">Home<span class="bar"></span></i></a>
+            <a href="/about" aria-label="About"><i class="icon w-20" stroke-width="2.5" data-feather="info"></i><i class="text">about<span class="bar"></span></i></a>
+            <a href="/library" class="focus" aria-label="Library"><i class="icon w-20" stroke-width="2.5" data-feather="book"></i><i class="text">Library<span class="bar"></span></i></a>
+            <a href="/contact" aria-label="Contact"><i class="icon w-20" stroke-width="2.5" data-feather="mail"></i><i class="text">contact<span class="bar"></span></i></a>
+        </span>
+        <span class="menu">
+            <span class="dropdown-wrap">
+                <a href="/accessibility" aria-label="Options" class="option-open"><i class="icon w-28" data-feather="more-horizontal"></i></a>
+            </span>
+        </span>
+    </header>
+    <section class="center header padding limited accent">
+        <span class="text no-flex big can-full">
+            <h1 class="text-56">Rate limits</h1>
+            <p class="text-20">If you're experiencing issues accessing the Project Library, you may be accessing the page too often.</p>
+        </span>
+    </section>
+    <section class="center" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="social-wrap">
+            <span class="social">
+                <div class="head">
+                    <h4 class="icon" translate="no"><i class="icon w-24" data-feather="activity" style="top: 0;"></i>Core</h4>
+                </div>
+                <div class="details">
+                    <ul>
+                        <li class="pfp-wrap"><p>Used <strong id="core_remaining">0</strong>/60 requests</p></li>
+                    </ul>
+                </div>
+            </span>
+            <span class="social">
+                <div class="head">
+                    <h4 class="icon" translate="no"><i class="icon w-24" data-feather="pie-chart" style="top: 0;"></i>GraphQL</h4>
+                </div>
+                <div class="details">
+                    <ul>
+                        <li class="pfp-wrap"><p>Used <strong id="graphql_remaining">0</strong>/0 requests</p></li>
+                    </ul>
+                </div>
+            </span>
+            <span class="social">
+                <div class="head">
+                    <h4 class="icon" translate="no"><i class="icon w-24" data-feather="command" style="top: 0;"></i>Integration mainfest</h4>
+                </div>
+                <div class="details">
+                    <ul>
+                        <li class="pfp-wrap"><p>Used <strong id="manifest_remaining">0</strong>/5000 requests</p></li>
+                    </ul>
+                </div>
+            </span>
+            <span class="social">
+                <div class="head">
+                    <h4 class="icon" translate="no"><i class="icon w-24" data-feather="search" style="top: 0;"></i>Search</h4>
+                </div>
+                <div class="details">
+                    <ul>
+                        <li class="pfp-wrap"><p>Used <strong id="search_remaining">0</strong>/10 requests</p></li>
+                    </ul>
+                </div>
+            </span>
+        </div>
+    </section>
+    <section class="center full" style="padding-top: 0; padding-bottom: 20px;">
+        <a role="button" href="javascript:void(0);" onclick="resetProjectStorage()" class="button icon con">Reset project cache</a>
+        <a role="button" href="javascript:void(0);" onclick="resetAnalyticStorage()" class="button icon con">Reset analytics cache</a>
+        <a role="button" href="javascript:void(0);" onclick="resetStorage()" class="button icon con">Reset ALL cache</a>
+        <p class="text-14">To view information immediately and bypass the cache limits, you can reset it here. Cache is logged in console and stored in your browser's localStorage.</p>
+    </section>
+    <script src="rates.js"></script>
+    <script src="cache.js"></script>
+    <section class="center full" style="padding-top: 0; padding-bottom: 20px;">
+        <a role="button" href="javascript:void(0);" onclick="show_logging()" class="button icon con">Visual logging</a>
+        <p class="text-14">Toggles visual logging, experimental only.</p>
+    </section>
+    <script>
+        function show_logging() {
+            if (localStorage.getItem('op_visual_logging') != "true") {
+                localStorage.setItem('op_visual_logging',"true");
+                log('enabled',`Visual logging has been enabled. Here's an example.`);
+            } else {
+                localStorage.setItem('op_visual_logging',"false");
+                console.log('visual logging disabled');
+            }
+        }
+    </script>
+    <footer class="dark">
+        <div class="flex">
+            <span class="brand">
+                <div class="main">
+                    <h1 class="brand-font plexion" translate="no">plexion</h1>
+                    <p>Powered 2020-2022</p>
+                    <br>
+                    <label class="over">ACCESSIBILITY</label>
+                    <br>
+                    <br>
+                    <span class="option-min">
+                        <h5>OpenDyslexic font</h5>
+                        <a role="toggle" class="toggle toggleDyslexicFont" href="javascript:void(0);" onclick="toggleDyslexicFont()"></a>
+                    </span>
+                    <span class="option-min">
+                        <h5>Hyperlegible font</h5>
+                        <a role="toggle" class="toggle toggleHyperlegibleFont" href="javascript:void(0);" onclick="toggleHyperlegibleFont()"></a>
+                    </span>
+                </div>
+            </span>
+            <span class="links">
+                <span class="link">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/live">Live</a></li>
+                        <li><a href="/events">Events</a></li>
+                        <li><a href="/library">Library</a></li>
+                        <li><a href="/socials">Socials</a></li>
+                    </ul>
+                </span>
+                <span class="link">
+                    <h4>osu!</h4>
+                    <ul>
+                        <li><a href="/osu!/">Home</a></li>
+                        <li><a href="/osu!/skins">Skins</a></li>
+                        <li><a href="/osu!/tablet">Tablet</a></li>
+                        <li><a href="/osu!/channel">Channel</a></li>
+                        <li><a href="https://github.com/plexiondev/goosu-overlay">Overlay</a></li>
+                    </ul>
+                </span>
+                <span class="link">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="/accessibility">Accessibility</a></li>
+                        <li><a href="/content">Content Info</a></li>
+                        <li><a href="/socials#contact">Contact</a></li>
+                    </ul>
+                </span>
+                <span class="link">
+                    <h4>Developing</h4>
+                    <ul>
+                        <li><a href="https://github.com/plexiondev/plexiondev.github.io">Github</a></li>
+                        <li><a href="/gnu">License</a></li>
+                    </ul>
+                </span>
+            </span>
+        </div>
+        <div class="padding">
+            <div class="socials">
+                <a class="social-icon" target="_blank" href="https://youtube.com/plexion" data-tooltip="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="social-icon" target="_blank" href="https://twitch.tv/plexionLIVE" data-tooltip="Twitch">
+                    <i class="fab fa-twitch"></i>
+                </a>
+                <a class="social-icon" target="_blank" href="https://twitter.com/plexionlive" data-tooltip="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- options -->
+<script src="/experiments/helvetica.js"></script>
+<script src="/experiments/light.js"></script>
+<script src="/js/settings/dyslexic.js"></script>
+<script src="/js/settings/hyperlegible.js"></script>
+<script src="/js/settings/noto.js"></script>
+<script src="/js/settings/reduced-motion.js"></script>
+<script src="/js/settings/reduced-saturation.js"></script>
+<script src="/js/settings/background-videos.js"></script>
+<script src="/js/settings/high-contrast.js"></script>
+<script src="/js/settings/legacy-gallery.js"></script>
+<script src="/js/theme.js"></script>
+<script>
+    feather.replace()
+</script>
+<!-- SNOW -->
+<!--<link rel="stylesheet" href="/css/snow.css">
+<script src="/js/snow.js"></script>
+<script src="/js/settings/snow.js"></script> End Christmas 2021 -->
