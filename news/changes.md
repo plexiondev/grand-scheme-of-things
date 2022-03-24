@@ -1,5 +1,5 @@
-## SG [2022.0213](https://github.com/plex1on/Survival-Games-Map/releases/tag/2022.0213)
+## WEB [2022.0324](https://github.com/plexiondev/grand-scheme-of-things/pull/1)
 
-- enabled world cheats
-- fixed worldborder
-- blocked off a place that definitely wasn't an easter egg coming soon (stay tuned)
+- merged CSS with plexion.dev for future-proofing
+- integrated libraryv2 for projects
+- introduced github-api caching for projects

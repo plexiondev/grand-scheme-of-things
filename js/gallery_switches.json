@@ -1,0 +1,14 @@
+{
+    "switches": [
+        {
+            "icon": "image",
+            "id": "slideshow",
+            "name": "Slideshow"
+        },
+        {
+            "icon": "grid",
+            "id": "grid",
+            "name": "Grid"
+        }
+    ]
+}

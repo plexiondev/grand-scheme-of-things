@@ -1,37 +1,41 @@
 /* user cards */
 .user-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 20px;
     transition: 0.2s;
-    padding: 20px 40px;
+    padding: 20px;
 }
-/* user card */
 .user-card {
+    display: inline-flex;
+    transition: 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none !important;
     background-color: var(--raise-bg);
     box-shadow: var(--raise-0);
-    text-decoration: none;
     cursor: pointer;
-    border-radius: 10px;
-    transition: 0.3s;
 }
-.user-card:hover, .user-card:focus {
-    background-color: var(--raise-hover);
-}
-
-/* card head icon */
+/* icon */
 .user-card .icon {
+    padding: 20px;
     display: flex;
     justify-content: center;
-    padding: 50px 0 20px 0;
+    align-items: middle;
 }
 .user-card .icon img {
-    background-color: var(--b5);
-    padding: 20px;
-    border-radius: 10px;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
 }
-/* Card info */
+/* info */
 .user-card .info {
-    text-align: center;
-    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+/* socials */
+.user-card .socials-card {
+    display: flex;
+    position: relative;
+    right: 8px;
 }

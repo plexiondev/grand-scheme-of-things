@@ -1,0 +1,88 @@
+{
+    "name": "libraryv2",
+    "version": "2022.0305",
+    "type": "map",
+    "info": {
+        "main": [
+            {
+                "type": "version",
+                "value": "1.15"
+            },
+            {
+                "type": "released",
+                "value": "10/06/2020"
+            }
+        ],
+        "links": [
+            {
+                "type": "pmc",
+                "link": "project/hide-amp-seek-4213912"
+            },
+            {
+                "type": "github",
+                "link": "haunting-hunters"
+            }
+        ],
+        "creators": [
+            {
+                "type": "by",
+                "link": "https://gsot.plexion.dev",
+                "name": "GSOT",
+                "icon": "https://gsot.plexion.dev/img/gsot.png",
+                "icon_type": "web"
+            }
+        ]
+    },
+    "features": [
+        {
+            "icon": "users",
+            "id": "gsot-multiplayer",
+            "name": "Multiplayer",
+            "description": "Invite as many hiders and seekers into the game!"
+        },
+        {
+            "icon": "shopping-cart",
+            "id": "gsot-powerups",
+            "name": "Powerups",
+            "description": "Purchase a range of powerups to use against the opposing team."
+        }
+    ],
+    "gallery": [
+        {
+            "type": "video",
+            "link": "KDY_zZZVCA0",
+            "src": "youtube",
+            "caption": "Trailer from GSOT"
+        },
+        {
+            "type": "image",
+            "link": "cover-big.png",
+            "caption": "Cover art"
+        },
+        {
+            "type": "image",
+            "link": "gal3.png",
+            "caption": "An outside view of the mansion"
+        },
+        {
+            "type": "image",
+            "link": "gal4.png",
+            "caption": "A view of the spawn"
+        },
+        {
+            "type": "image",
+            "link": "gal0.png",
+            "caption": "The Corridors"
+        },
+        {
+            "type": "image",
+            "link": "gal1.png",
+            "caption": "The Basement"
+        },
+        {
+            "type": "image",
+            "link": "gal2.png",
+            "caption": "Studio"
+        }
+    ]
+}
