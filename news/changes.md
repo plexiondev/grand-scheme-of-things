@@ -1,5 +1,4 @@
-## WEB [2022.0324](https://github.com/plexiondev/grand-scheme-of-things/pull/1)
+## WEB [2022.0416](https://github.com/plexiondev/grand-scheme-of-things/pull/2)
 
-- merged CSS with plexion.dev for future-proofing
-- integrated libraryv2 for projects
-- introduced github-api caching for projects
+- ported over project directory (/library)
+- fixed footer on pages

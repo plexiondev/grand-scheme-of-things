@@ -1,0 +1,24 @@
+{
+    "categories": [
+        {
+            "type": "all",
+            "icon": "compass",
+            "name": "All"
+        },
+        {
+            "type": "map",
+            "icon": "globe",
+            "name": "Maps"
+        }
+    ],
+    "links": [
+        {
+            "type": "pmc",
+            "link": "https://planetminecraft.com/member/gsot"
+        },
+        {
+            "type": "issues",
+            "link": "mailto:grandschemeofthingsyt@gmail.com"
+        }
+    ]
+}
