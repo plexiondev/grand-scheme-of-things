@@ -144,6 +144,10 @@ function parse(data,type,search) {
         // name
         let name = `${data[i].name}`.replace(/\-/g,' '); //replace dashes with spaces
 
+        // create cover & topics
+        let topics = data[i].topics;
+        let cover = `/library/${link}/cover.png`;
+
         // html
         card.innerHTML = (`
         <div class="cover"><img src="${cover}"></div>
