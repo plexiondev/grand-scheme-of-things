@@ -143,18 +143,6 @@ function parse(data,type,search) {
 
         // name
         let name = `${data[i].name}`.replace(/\-/g,' '); //replace dashes with spaces
-        
-        // gsot check :tm:
-        let topics = data[i].topics;
-        let cover = `/library/${link}/cover.png`;
-        for (let t2 in data[i].topics) {
-            let t = topics[t2];
-
-            if (t == "gsot") {
-                card.href = `https://gsot.plexion.dev/library/${link}/`;
-                cover = `https://gsot.plexion.dev/library/${link}/cover.png`;
-            }
-        }
 
         // html
         card.innerHTML = (`
@@ -176,31 +164,13 @@ function parse(data,type,search) {
         for (let t2 in data[i].topics) {
             let t = topics[t2];
 
-            if (t == "datapack" && (type == "datapack" || type == "all") && criteria(name,data[i].description,search)) {
-                // datapacks
-                card.classList.add("datapack");
-
-                // append
-                document.getElementById('cards').appendChild(card);
-            } else if (t == "resourcepack" && (type == "resourcepack" || type == "all") && criteria(name,data[i].description,search)) {
-                // resourcepacks
-                card.classList.add("resourcepack");
-
-                // append
-                document.getElementById('cards').appendChild(card);
-            } else if (t == "map" && (type == "map" || type == "all") && criteria(name,data[i].description,search)) {
+            if (t == "map" && (type == "map" || type == "all") && criteria(name,data[i].description,search)) {
                 // maps
                 card.classList.add("map");
 
                 // append
                 document.getElementById('cards').appendChild(card);
-            } else if (t == "event" && (type == "event" || type == "all") && criteria(name,data[i].description,search)) {
-                // events
-                card.classList.add("event");
-
-                // append
-                document.getElementById('cards').appendChild(card);
-            } // skip if else (beta)
+            } // skip if else (beta/non-gsot)
         }
 
     }
