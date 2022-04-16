@@ -61,9 +61,28 @@
         </span>
         <div class="bg-back bg-side-grad"></div>
     </section>
-    <div class="cards" id="maps"></div>
-    <div id="userRepos" style="display: none;"></div>
-    <div class="gap" style="height: 150px;"></div>
+    <section class="center full" id="error" style="background-color: var(--d5); display: none;">
+        <h2>Error 404</h2>
+        <p class="text-18">We're having issues retrieving the project library, check your network connection, rate-limit status, or reset cache.</p>
+        <a role="button" class="button focus icon con" href="/library/rates">Rate limits</a>
+        <a role="button" href="javascript:void(0);" onclick="resetStorage()" class="button focus icon con">Reset ALL cache</a>
+        <script src="cache.js"></script>
+    </section>
+    <section class="center limited" style="padding-top: 30px; padding-bottom: 10px;">
+        <div class="search">
+            <input class="search-input" id="search" placeholder="Search for..." autofocus>
+            <button role="button" class="clear-input" onclick="clear_search()" id="search-clear" aria-label="Clear search text"><i class="icon w-16" data-feather="x"></i></button>
+            <button role="search" class="search-con" onclick="search()" id="search-con" aria-label="Search current text"><i class="icon w-30" data-feather="search"></i></button>
+        </div>
+    </section>
+    <div class="directory">
+        <span class="list">
+            <ul id="list"></ul>
+            <br>
+            <ul id="links"></ul>
+        </span>
+        <span class="cards-cont"><div class="cards" id="cards"></div></span>
+    </div>
     <footer class="dark">
         <div class="flex">
             <span class="brand">
