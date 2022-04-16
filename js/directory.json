@@ -6,21 +6,6 @@
             "name": "All"
         },
         {
-            "type": "event",
-            "icon": "award",
-            "name": "Events"
-        },
-        {
-            "type": "datapack",
-            "icon": "code",
-            "name": "Datapacks"
-        },
-        {
-            "type": "resourcepack",
-            "icon": "droplet",
-            "name": "Resourcepacks"
-        },
-        {
             "type": "map",
             "icon": "globe",
             "name": "Maps"
@@ -29,15 +14,11 @@
     "links": [
         {
             "type": "pmc",
-            "link": "https://planetminecraft.com/member/plexiondev"
-        },
-        {
-            "type": "github",
-            "link": "https://github.com/plex1on"
+            "link": "https://planetminecraft.com/member/gsot"
         },
         {
             "type": "issues",
-            "link": "mailto:support@plexion.dev"
+            "link": "mailto:grandschemeofthingsyt@gmail.com"
         }
     ]
 }

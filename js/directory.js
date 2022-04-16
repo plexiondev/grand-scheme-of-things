@@ -3,10 +3,7 @@
 
 const view_types = {
     'all': 0,
-    'event': 1,
-    'datapack': 2,
-    'resourcepack': 3,
-    'map': 4
+    'map': 1
 }
 const info_headers = {
     'pmc': 'PMC',
