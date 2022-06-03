@@ -3,6 +3,11 @@
     --font-head: Montserrat, var(--font-main);
 }
 
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+
 /* when scrolled */
 header.scrolled, header:not(.scrolled):hover, header:not(.scrolled):focus-within {
     background-color: #000000 !important;
