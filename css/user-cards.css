@@ -13,7 +13,7 @@
     overflow: hidden;
     text-align: left;
     text-decoration: none !important;
-    background-color: var(--raise-bg);
+    background-color: var(--b5);
     box-shadow: var(--raise-0);
     cursor: pointer;
 }
