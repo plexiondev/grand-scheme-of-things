@@ -11,6 +11,8 @@ const info_headers = {
     'issues': 'Support email'
 };
 
+let projects = [];
+
 // set default view
 const dir_query = window.location.search;
 const dir_url = new URLSearchParams(dir_query);
@@ -26,8 +28,8 @@ $.get( `/js/directory.json`, function( response ) {
 
         category.innerHTML = (`
         <button onclick="directory('${data.categories[i].type}')">
-            <i class="icon w-24" data-feather="${data.categories[i].icon}"></i>
-            <h4>${data.categories[i].name}</h4>
+            <i class="icon w-20" data-feather="${data.categories[i].icon}"></i>
+            <h5>${data.categories[i].name}</h5>
         </button>
         `);
 
@@ -121,6 +123,8 @@ function parse(data,type,search) {
     document.getElementById('cards').innerHTML = '';
     document.getElementById('cards').classList.remove('error-override');
 
+    projects = [];
+
     // loop over pool
     for (let i in data) {
 
@@ -131,7 +135,8 @@ function parse(data,type,search) {
         
         // parse link
         let link = `${data[i].name}`.replace(/\-/g,'').toLowerCase(); //replace dashes with empty & lower
-        card.href = `/library/${link}/`
+        card.href = `/library/${link}/`;
+        let link_string = `/library/${link}/`;
 
         // update date
         var d = new Date(`${data[i].pushed_at}`);
@@ -162,12 +167,13 @@ function parse(data,type,search) {
         `);
 
         // project tags/(topics)
-        for (let t2 in data[i].topics) {
-            let t = topics[t2];
+        for (let t in data[i].topics) {
+            let topic = topics[t];
 
-            if (t == "map" && (type == "map" || type == "all") && criteria(name,data[i].description,search)) {
+            if (topic == "map" && (type == "map" || type == "all") && criteria(name,data[i].description,search)) {
                 // maps
                 card.classList.add("map");
+                projects.push(link_string);
 
                 // append
                 document.getElementById('cards').appendChild(card);
@@ -216,21 +222,27 @@ function search() {
 
 // clear search
 function clear_search() {
-    console.log('a')
-    document.getElementById('search').value = "";
+    document.getElementById('search').value = '';
     search();
 }
 
-// enter
 $("#search").keyup(function(event) {
     if (event.keyCode === 13) {
+        // enter
         $("#search-con").click();
+    }
+    else if (event.keyCode === 27) {
+        // escape
+        clear_search();
+    } else if (event.keyCode !== 32) {
+        search();
     }
 });
 
-// escape
-$("#search").keyup(function(event) {
-    if (event.keyCode === 27) {
-        clear_search();
-    }
-});
+// random
+function random() {
+    let limit = projects.length;
+
+    let id = Math.floor(Math.random() * limit);
+    window.location.href = projects[id];
+}
